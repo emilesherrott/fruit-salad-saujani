@@ -5,7 +5,6 @@ const fruitNutrition = document.querySelector("#nutritionSection p")
 fruitForm.addEventListener("submit", extractFruit)
 
 let calories = 0
-// ! NEW CODE
 const fruitCalories = {}
 
 function extractFruit(e) {
@@ -19,6 +18,10 @@ function fetchFruitData(fruit){
         .then(processResponse)
         .then((data)=> addFruit(data))
         .catch((error)=> console.log(error))
+    fetch(`https://pixabay.com/api/?key=<api-key>&q=${fruit}+fruit&image_type=photo&category=food`)
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error))
 }
 
 function processResponse(response){
@@ -35,15 +38,12 @@ function addFruit(fruit) {
     li.addEventListener("click", removeFruit, {once: true})
     fruitList.appendChild(li)
 
-    // ! NEW CODE
     fruitCalories[fruit.name] = fruit.nutritions.calories
     calories += fruit.nutritions.calories
     fruitNutrition.textContent = calories
 }
 
 function removeFruit(e) {
-    // ! NEW CODE
-    console.log(e.target.textContent)
     const fruitName = e.target.textContent
     calories -= fruitCalories[fruitName]
     fruitNutrition.textContent = calories
