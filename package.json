@@ -20,5 +20,9 @@
   "homepage": "https://github.com/emilesherrott/fruit-salad-app#readme",
   "devDependencies": {
     "watchify": "^4.0.0"
+  },
+  "dependencies": {
+    "emile-mafia": "^1.0.6",
+    "npm-oddeven": "^2.0.1"
   }
 }
