@@ -1,0 +1,24 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "watchify ./script.js -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilesherrott/fruit-salad-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/emilesherrott/fruit-salad-app/issues"
+  },
+  "homepage": "https://github.com/emilesherrott/fruit-salad-app#readme",
+  "devDependencies": {
+    "watchify": "^4.0.0"
+  }
+}
